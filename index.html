@@ -1,1 +1,284 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="author" content="Victor Matveev"><title>Math 340 — Numerical Methods — Fall 2026</title><link rel="stylesheet" href="style.css"></head><body><header class="header"><div class="header-inner"><div class="eyebrow">Department of Mathematical Sciences · NJIT</div><h1>Math 340 — Numerical Methods</h1><p>Fall 2026 · Victor Matveev</p></div></header><main class="container"><section class="card intro"><h2>Course Materials</h2><p class="subtle">Midterm review, homework assignments and solutions, and lecture notes.</p></section><section class="card"><h2>Midterm Preparation</h2><p>Review the homework solutions and practice problems. Exam topics may change from semester to semester.</p><div class="notice"><strong>Practice midterm:</strong> You may ignore Problem 8. Polynomial interpolation is limited to the <strong>Lagrange basis</strong>.</div><h3>Practice Midterm</h3><div class="resource-list"><div><span>Practice problems</span><a href="M340_F25_Practice_Midterm.pdf">Practice PDF</a><a href="M340_F25_Practice_Midterm_Solution.pdf">Solution PDF</a></div></div><h3>Previous Midterm</h3><div class="resource-list"><div><span>Fall 2025 midterm</span><a href="M340_F25_MidtermExam_v2.pdf">Exam PDF</a><a href="M340_F25_MidtermExam_Solution_v2.pdf">Solution PDF</a></div></div></section><section class="card"><h2>Homework and Solutions</h2><div class="resource-list"><div><span>Homework 1</span><a href="M340_F26_HW1.pdf">Assignment PDF</a><a href="M340_F26_HW1_Solution.pdf">Solution PDF</a></div><div><span>Homework 2</span><a href="M340_F26_HW2.pdf">Assignment PDF</a><a href="M340_F26_HW2_Solution.pdf">Solution PDF</a></div><div><span>Homework 3</span><a href="M340_F26_HW3.pdf">Assignment PDF</a><a href="M340_F26_HW3_Solution.pdf">Solution PDF</a></div><div><span>Homework 4</span><a href="M340_F26_HW4.pdf">Assignment PDF</a><a href="M340_F26_HW4_Solution.pdf">Solution PDF</a></div><div><span>Homework 5</span><a href="M340_F26_HW5.pdf">Assignment PDF</a><a href="M340_F26_HW5_Solution.pdf">Solution PDF</a></div><div><span>Homework 6</span><a href="M340_F26_HW6.pdf">Assignment PDF</a><a href="M340_F26_HW6_Solution.pdf">Solution PDF</a></div></div></section><section class="card"><h2>Lecture Notes</h2><div class="resource-list single"><div><span>Taylor Series</span><a href="M340_F26_Review_Taylor_Series.pdf">Lecture PDF</a></div><div><span>Double Precision and Roundoff Errors</span><a href="M340_F26_double_precision_roundoff_errors.pdf">Lecture PDF</a></div><div><span>Bisection and Iteration</span><a href="M340_F26_Bisection_Iteration.pdf">Lecture PDF</a></div><div><span>Newton Method</span><a href="M340_F26_Newton.pdf">Lecture PDF</a></div><div><span>Least Squares</span><a href="M340_F26_Least_Squares.pdf">Lecture PDF</a></div><div><span>Polynomial Interpolation (Lagrange basis only)</span><a href="M340_F26_Interpolation.pdf">Lecture PDF</a></div></div></section><section class="card"><h2>Midterm Topics</h2><ol class="topics"><li>Taylor series; forming Taylor polynomial by composition</li><li>Binary system; the 52-bit limitation on the significand</li><li>Analyzing catastrophic loss of significance</li><li>Root-finding: bracketing the root; bisection</li><li>Root-finding: direct iteration and its convergence</li><li>Root-finding: Newton Method and its variants</li><li>Least-squares: deriving the normal equations using calculus or geometry</li><li>Least-squares: linearize a model using a simple transformation</li><li>Polynomial interpolation: Lagrange polynomial basis only</li><li>MATLAB: describe what a given short piece of code does</li></ol></section><footer>Maintained by <a href="https://web.njit.edu/~matveev/">Victor Matveev</a></footer></main></body></html>
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <meta content="Victor Matveev" name="author"/>
+  <title>
+   Math 340 — Numerical Methods — Fall 2026
+  </title>
+  <link href="style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="header">
+   <div class="header-inner">
+    <div class="eyebrow">
+     Department of Mathematical Sciences · NJIT
+    </div>
+    <h1>
+     Math 340 — Numerical Methods
+    </h1>
+    <p>
+     Fall 2026 · Victor Matveev
+    </p>
+   </div>
+  </header>
+  <div class="page-shell">
+   <aside aria-label="Course navigation" class="sidebar">
+    <section class="nav-group">
+     <h2>
+      Math 340 Links
+     </h2>
+     <a href="M340_F26_Syllabus.pdf">
+      Syllabus
+     </a>
+     <a href="#midterm">
+      Midterm Preparation
+     </a>
+     <a href="#homework">
+      Homework and Solutions
+     </a>
+     <a href="#lectures">
+      Lecture Notes
+     </a>
+     <a href="https://njit.instructure.com/courses/">
+      Canvas
+     </a>
+     <a href="https://www.wolframalpha.com/">
+      Wolfram Alpha
+     </a>
+    </section>
+    <section class="nav-group">
+     <h2>
+      Department
+     </h2>
+     <a href="https://math.njit.edu/">
+      Dept Math Sciences
+     </a>
+     <a href="http://www.njitMTC.com">
+      Math Tutoring
+     </a>
+     <a href="https://math.njit.edu/students/undergraduate/">
+      Undergrad Info
+     </a>
+     <a href="https://math.njit.edu/course-syllabi-schedules-and-descriptions">
+      Course Syllabi
+     </a>
+     <a href="https://math.njit.edu/students/undergraduate/advisors.php">
+      Undergrad Advisors
+     </a>
+    </section>
+    <section class="nav-group">
+     <h2>
+      NJIT
+     </h2>
+     <a href="https://www.njit.edu/">
+      NJIT
+     </a>
+     <a href="https://www5.njit.edu/registrar/exams/finalexams.php">
+      Final Exam Schedule
+     </a>
+     <a href="https://experience.elluciancloud.com/njiot929/">
+      Highlander Pipeline
+     </a>
+     <a href="https://www5.njit.edu/registrar/">
+      Registrar
+     </a>
+     <a href="https://generalssb-prod.ec.njit.edu/BannerExtensibility/customPage/page/stuRegCrseSched">
+      Course Schedule
+     </a>
+     <a href="https://www5.njit.edu/registrar/calendars/">
+      Academic Calendar
+     </a>
+     <a href="http://ist.njit.edu/software/">
+      NJIT Software
+     </a>
+     <a href="https://directory.njit.edu/search.aspx">
+      NJIT Directory
+     </a>
+    </section>
+   </aside>
+   <main class="content">
+    <section class="card" id="syllabus">
+     <h2 id="syllabus">
+      Syllabus
+     </h2>
+     <a href="M340_F26_Syllabus.pdf">
+      Course syllabus (PDF)
+     </a>
+    </section>
+    <section class="card">
+     <h2 id="midterm">
+      Midterm Preparation
+     </h2>
+     <h3>
+      Practice Midterm
+     </h3>
+     <div class="resource-list">
+      <div>
+       <span>
+        Practice problems
+       </span>
+       <a href="M340_F25_Practice_Midterm.pdf">
+        Practice PDF
+       </a>
+       <a href="M340_F25_Practice_Midterm_Solution.pdf">
+        Solution PDF
+       </a>
+      </div>
+     </div>
+     <h3>
+      Previous Midterm
+     </h3>
+     <div class="resource-list">
+      <div>
+       <span>
+        Fall 2025 midterm
+       </span>
+       <a href="M340_F25_MidtermExam_v2.pdf">
+        Exam PDF
+       </a>
+       <a href="M340_F25_MidtermExam_Solution_v2.pdf">
+        Solution PDF
+       </a>
+      </div>
+     </div>
+    </section>
+    <section class="card">
+     <h2 id="homework">
+      Homework and Solutions
+     </h2>
+     <div class="resource-list">
+      <div>
+       <span>
+        Homework 1
+       </span>
+       <a href="M340_F26_HW1.pdf">
+        Assignment PDF
+       </a>
+       <a href="M340_F26_HW1_Solution.pdf">
+        Solution PDF
+       </a>
+      </div>
+      <div>
+       <span>
+        Homework 2
+       </span>
+       <a href="M340_F26_HW2.pdf">
+        Assignment PDF
+       </a>
+       <a href="M340_F26_HW2_Solution.pdf">
+        Solution PDF
+       </a>
+      </div>
+      <div>
+       <span>
+        Homework 3
+       </span>
+       <a href="M340_F26_HW3.pdf">
+        Assignment PDF
+       </a>
+       <a href="M340_F26_HW3_Solution.pdf">
+        Solution PDF
+       </a>
+      </div>
+      <div>
+       <span>
+        Homework 4
+       </span>
+       <a href="M340_F26_HW4.pdf">
+        Assignment PDF
+       </a>
+       <a href="M340_F26_HW4_Solution.pdf">
+        Solution PDF
+       </a>
+      </div>
+      <div>
+       <span>
+        Homework 5
+       </span>
+       <a href="M340_F26_HW5.pdf">
+        Assignment PDF
+       </a>
+       <a href="M340_F26_HW5_Solution.pdf">
+        Solution PDF
+       </a>
+      </div>
+      <div>
+       <span>
+        Homework 6
+       </span>
+       <a href="M340_F26_HW6.pdf">
+        Assignment PDF
+       </a>
+       <a href="M340_F26_HW6_Solution.pdf">
+        Solution PDF
+       </a>
+      </div>
+     </div>
+    </section>
+    <section class="card">
+     <h2 id="lectures">
+      Lecture Notes
+     </h2>
+     <div class="resource-list single">
+      <div>
+       <span>
+        Taylor Series
+       </span>
+       <a href="M340_F26_Review_Taylor_Series.pdf">
+        Lecture PDF
+       </a>
+      </div>
+      <div>
+       <span>
+        Double Precision and Roundoff Errors
+       </span>
+       <a href="M340_F26_double_precision_roundoff_errors.pdf">
+        Lecture PDF
+       </a>
+      </div>
+      <div>
+       <span>
+        Bisection and Iteration
+       </span>
+       <a href="M340_F26_Bisection_Iteration.pdf">
+        Lecture PDF
+       </a>
+      </div>
+      <div>
+       <span>
+        Newton Method
+       </span>
+       <a href="M340_F26_Newton.pdf">
+        Lecture PDF
+       </a>
+      </div>
+      <div>
+       <span>
+        Least Squares
+       </span>
+       <a href="M340_F26_Least_Squares.pdf">
+        Lecture PDF
+       </a>
+      </div>
+      <div>
+       <span>
+        Polynomial Interpolation (Lagrange basis only)
+       </span>
+       <a href="M340_F26_Interpolation.pdf">
+        Lecture PDF
+       </a>
+      </div>
+     </div>
+    </section>
+    <footer>
+     Maintained by
+     <a href="https://web.njit.edu/~matveev/">
+      Victor Matveev
+     </a>
+    </footer>
+   </main>
+  </div>
+ </body>
+</html>
