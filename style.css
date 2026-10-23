@@ -212,7 +212,7 @@ h1 {
 }
 .resource-list > div {
   display: grid;
-  grid-template-columns: 150px 1fr 1fr;
+  grid-template-columns: 120px 1fr 1fr;
   gap: 12px;
   align-items: center;
   padding: 9px 12px;
