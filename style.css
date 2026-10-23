@@ -217,14 +217,14 @@ h1 {
 
 .resource-list > div {
   display:grid;
-  grid-template-columns:minmax(150px,2fr) minmax(90px,1fr) minmax(90px,1fr);
+  grid-template-columns: minmax(120px,2fr) minmax(90px,1fr) minmax(90px,1fr);
   align-items:center;
   gap:12px;
   padding:10px 12px;
   border-bottom:1px solid var(--line)
 }
 .resource-list > div:last-child {border-bottom:0}
-.resource-list.single>div{grid-template-columns:minmax(150px,2fr) minmax(90px,1fr)}
+.resource-list.single>div{grid-template-columns: minmax(120px,2fr) minmax(90px,1fr)}
 .resource-list span{color:#4f5962}
 
 .topics{columns:2;column-gap:35px;padding-left:24px}
